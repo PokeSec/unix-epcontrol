@@ -10,7 +10,7 @@ os:
 
 before_script:
   - sudo apt-get install ruby-dev
-  - pip install sh
+  - python3 -m pip install sh
   - gem install fpm
 
 script:
