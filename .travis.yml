@@ -7,6 +7,11 @@ os:
   - linux
   - osx
 
+
+before_script:
+  - sudo pip3 install sh
+  - sudo gem install fpm
+
 script:
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]  ; then python3 build.py x64 macosx         ; fi
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then python3 build.py x64 centos6        ; fi
