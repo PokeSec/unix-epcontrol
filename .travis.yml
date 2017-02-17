@@ -10,7 +10,7 @@ os:
 osx_image: xcode8.2
 
 before_script:
-  - sudo apt-get install ruby-dev
+  - sudo apt-get install ruby-dev rpm debhelper
   - python3 -m pip install sh
   - gem install fpm
 
