@@ -45,7 +45,7 @@ DESCRIPTION = "Configuration package for EPControl agent"
 MAINTAINER = "pokesec@chtimbo.org"
 HOMEPAGE = "https://github.com/PokeSec"
 
-AGENTLIB_URL = "https://github.com/PokeSec/agentlib/releases/download/{0}/agentlib_unix-{0}-py3-none-unix.whl".\
+AGENTLIB_URL = "https://github.com/PokeSec/agentlib/releases/download/{0}/agentlib_unix-{0}-py3-none-any.whl".\
     format(AGENTLIB_VERSION)
 
 CWD = Path(os.path.dirname(os.path.realpath(__file__)))
