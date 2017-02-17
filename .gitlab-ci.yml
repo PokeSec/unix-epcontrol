@@ -1,0 +1,96 @@
+stages:
+  - build
+
+.linux_build_template: &linux-build-def
+  artifacts:
+    paths:
+      - dist/*
+    expire_in: 1 week
+  stage: build
+  tags:
+      - linux
+  except:
+      - triggers
+
+build_x86_centos6:
+  <<: *linux-build-def
+  script:
+    - python3 build.py x86 centos6
+
+build_x86_centos7:
+  <<: *linux-build-def
+  script:
+    - python3 build.py x86 centos7
+
+build_x86_debian7:
+  <<: *linux-build-def
+  script:
+    - python3 build.py x86 debian7
+
+build_x86_debian8:
+  <<: *linux-build-def
+  script:
+    - python3 build.py x86 debian8
+
+build_x86_ubuntu12.04:
+  <<: *linux-build-def
+  script:
+    - python3 build.py x86 ubuntu12.04
+
+build_x86_ubuntu14.04:
+  <<: *linux-build-def
+  script:
+    - python3 build.py x86 ubuntu14.04
+
+build_x86_ubuntu16.04:
+  <<: *linux-build-def
+  script:
+    - python3 build.py x86 ubuntu16.04
+
+build_x64_centos6:
+  <<: *linux-build-def
+  script:
+    - python3 build.py x64 centos6
+
+build_x64_centos7:
+  <<: *linux-build-def
+  script:
+    - python3 build.py x64 centos7
+
+build_x64_debian7:
+  <<: *linux-build-def
+  script:
+    - python3 build.py x64 debian7
+
+build_x64_debian8:
+  <<: *linux-build-def
+  script:
+    - python3 build.py x64 debian8
+
+build_x64_ubuntu12.04:
+  <<: *linux-build-def
+  script:
+    - python3 build.py x64 ubuntu12.04
+
+build_x64_ubuntu14.04:
+  <<: *linux-build-def
+  script:
+    - python3 build.py x64 ubuntu14.04
+
+build_x64_ubuntu16.04:
+  <<: *linux-build-def
+  script:
+    - python3 build.py x64 ubuntu16.04
+
+build_x64_macosx:
+  artifacts:
+    paths:
+      - dist/*
+    expire_in: 1 week
+  stage: build
+  tags:
+      - osx
+  except:
+      - triggers
+  script:
+    - python3 build.py x64 macosx

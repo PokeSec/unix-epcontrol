@@ -1,0 +1,25 @@
+language: python3
+
+services:
+  - docker
+
+os:
+  - linux
+  - osx
+
+script:
+- if [[ "$TRAVIS_OS_NAME" == "osx" ]]  ; then python3 build.py x64 macosx         ; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then python3 build.py x64 centos6        ; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then python3 build.py x64 centos7        ; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then python3 build.py x64 debian7        ; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then python3 build.py x64 debian8        ; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then python3 build.py x64 ubuntu12.04    ; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then python3 build.py x64 ubuntu14.04    ; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then python3 build.py x64 ubuntu16.04    ; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then python3 build.py x86 centos6        ; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then python3 build.py x86 centos7        ; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then python3 build.py x86 debian7        ; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then python3 build.py x86 debian8        ; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then python3 build.py x86 ubuntu12.04    ; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then python3 build.py x86 ubuntu14.04    ; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then python3 build.py x86 ubuntu16.04    ; fi

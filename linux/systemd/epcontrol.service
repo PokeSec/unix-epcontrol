@@ -1,0 +1,10 @@
+[Unit]
+Description=EPControl Service
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/epcontrol
+ExecStart=/opt/epcontrol/EPControl
+
+[Install]
+WantedBy=multi-user.target
