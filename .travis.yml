@@ -9,7 +9,7 @@ os:
 
 
 before_script:
-  - sudo pip3 install sh
+  - sudo pip install sh
   - sudo gem install fpm
 
 script:
