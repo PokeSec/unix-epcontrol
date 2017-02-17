@@ -10,8 +10,8 @@ os:
 
 before_script:
   - sudo apt-get install ruby-dev
-  - sudo pip install sh
-  - sudo gem install fpm
+  - pip install sh
+  - gem install fpm
 
 script:
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]  ; then python3 build.py x64 macosx         ; fi
